@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../assets/logo.svg'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -10,11 +11,13 @@ const Footer = () => {
                     KIDZ Industries Ltd.
                 </p>
                 <div>
-                <div className="grid grid-flow-col gap-4">
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Blog</a>
-                    <a className="link link-hover">Press kit</a>
+                <div>
+                    <ul className="grid grid-flow-col gap-4">
+                        <li><Link to="/aboutus">About Us</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
+                        <li><Link to="/blog">Blog</Link></li>
+                        <li><Link to="/presskit">Press kit</Link></li>
+                    </ul>
                 </div>
             </div>
                 <p>Copyright © 2023 - All right reserved</p>
