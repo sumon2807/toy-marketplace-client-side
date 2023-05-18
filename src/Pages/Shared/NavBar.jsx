@@ -6,7 +6,7 @@ import { FaUser, FaBabyCarriage } from 'react-icons/fa';
 const NavBar = () => {
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 py-4">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -20,7 +20,7 @@ const NavBar = () => {
                 </div>
             </div>
             <div className="navbar-center">
-                <Link><img src={logo} alt="" /></Link>
+                <Link to="/"><img src={logo} alt="" /></Link>
             </div>
             <div className="navbar-end">
                 <button className="btn btn-ghost btn-circle">

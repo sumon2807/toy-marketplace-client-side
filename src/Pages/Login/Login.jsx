@@ -1,13 +1,40 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
+    const {signIn}=useContext(AuthContext);
+
+    const handleLogin=event=>{
+        event.preventDefault();
+
+        const form=event.target;
+        const email=form.email.value;
+        const password=form.password.value;
+        console.log(email, password);
+
+
+        signIn(email, password)
+        .then(result=>{
+            const user=result.user;
+            console.log(user);
+            Swal.fire({
+                title: 'Success!',
+                text: 'Successfully Login',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+        })
+        .catch(error=>console.log(error.message))
+
+    }
     return (
         <div className="hero min-h-screen bg-base-200 ">
             <div className="hero-content w-[50%]">
                 <div className="card w-full shadow-2xl bg-base-100">
                     <div className="card-body ">
-                        <form>
+                        <form onSubmit={handleLogin}>
                             <h2 className='text-4xl font-bold text-center'>Please Login</h2>
                             <div className="form-control">
                                 <label className="label">
