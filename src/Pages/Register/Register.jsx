@@ -4,7 +4,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const Register = () => {
-    const {createUser}=useContext(AuthContext);
+    const {user,createUser, updateUserProfile}=useContext(AuthContext);
 
     const handleRegister=event=>{
         event.preventDefault();
@@ -13,8 +13,8 @@ const Register = () => {
         const name=form.name.value;
         const email=form.email.value;
         const password=form.password.value;
-        const photoURL=form.photo.value;
-        console.log(name, email, password, photoURL);
+        const photo=form.photo.value;
+        console.log(name, email, password, photo);
 
         if(!/(?=.*[A-Z])/.test(password)){
             Swal.fire({
@@ -46,14 +46,27 @@ const Register = () => {
 
         createUser(email, password)
         .then(result=>{
-            const user=result.user;
-            console.log(user);
-            Swal.fire({
-                title: 'Success!',
-                text: 'Registration Successfully',
-                icon: 'success',
-                confirmButtonText: 'Cool'
-              })
+            const loggedUser=result.user;
+            loggedUser.displayName=name;
+            loggedUser.photoURL=photo;
+            console.log(loggedUser);
+
+            updateUserProfile({
+                displayName:name,
+                photoURL:photo
+            })
+            .then(()=>{
+                console.log(loggedUser);
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Registration Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            })
+            .catch(error=>console.log(error))
+            form.reset();
+            
         })
         .catch(error=>{
             console.error(error.message);
