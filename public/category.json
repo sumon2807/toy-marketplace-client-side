@@ -1,0 +1,164 @@
+[
+    {
+      "id": "01",
+      "categoryId": "cat1",
+      "category": "STEM Toys",
+      "subCategories": [
+        {
+          "subCategoryId": "subcat1",
+          "name": "Engineering",
+          "toys": [
+            {
+              "itemId": "item1",
+              "picture": "https://example.com/engineering-toy1.jpg",
+              "name": "Build Your Own Robot",
+              "price": "$49.99",
+              "rating": 4.5,
+              "details": "The Build Your Own Robot kit allows kids to assemble and customize their own robotic companion. It promotes problem-solving and creativity."
+            },
+            {
+              "itemId": "item2",
+              "picture": "https://example.com/engineering-toy2.jpg",
+              "name": "Electronic Circuit Kit",
+              "price": "$29.99",
+              "rating": 4.2,
+              "details": "The Electronic Circuit Kit teaches children the basics of circuitry and electronics through hands-on experiments and projects."
+            }
+          ]
+        },
+        {
+          "subCategoryId": "subcat2",
+          "name": "Coding",
+          "toys": [
+            {
+              "itemId": "item3",
+              "picture": "https://example.com/coding-toy1.jpg",
+              "name": "Coding Robot Car",
+              "price": "$39.99",
+              "rating": 4.7,
+              "details": "The Coding Robot Car introduces children to programming concepts and allows them to code their own robot car movements and behaviors."
+            },
+            {
+              "itemId": "item4",
+              "picture": "https://example.com/coding-toy2.jpg",
+              "name": "Coding Learning Kit",
+              "price": "$24.99",
+              "rating": 4.3,
+              "details": "The Coding Learning Kit provides a comprehensive coding curriculum and hands-on activities to teach kids coding and problem-solving skills."
+            }
+          ]
+        },
+        {
+          "subCategoryId": "subcat3",
+          "name": "Science",
+          "toys": [
+            {
+              "itemId": "item5",
+              "picture": "https://example.com/science-toy1.jpg",
+              "name": "Chemistry Lab Set",
+              "price": "$59.99",
+              "rating": 4.8,
+              "details": "The Chemistry Lab Set includes various chemicals, lab equipment, and experiments to introduce children to the world of chemistry and scientific exploration."
+            },
+            {
+              "itemId": "item6",
+              "picture": "https://example.com/science-toy2.jpg",
+              "name": "Microscope Kit",
+              "price": "$34.99",
+              "rating": 4.6,
+              "details": "The Microscope Kit comes with a high-quality microscope and slides, allowing kids to observe and explore the microscopic world."
+            }
+          ]
+        }
+      ],
+      "picture": "https://example.com/toy6.jpg",
+      "name": "Building Blocks Set",
+      "price": "$24.99",
+      "rating": 4.7,
+      "sellerName": "Toys R Us",
+      "sellerEmail": "sales@toysrus.com",
+      "availableQuantity": 10,
+      "toyDetails": "This building blocks set includes 100 pieces of colorful blocks, perfect for developing creativity and fine motor skills in children."
+    },
+    {
+      "id": "02",
+      "categoryId": "cat2",
+      "category": "Educational Models",
+      "subCategories": [
+        {
+          "subCategoryId": "subcat4",
+          "name": "Astronomy",
+          "toys": [
+            {
+              "itemId": "item7",
+              "picture": "https://example.com/astronomy-toy1.jpg",
+              "name": "Planetarium Projector",
+              "price": "$39.99",
+              "rating": 4.4,
+              "details": "The Planetarium Projector projects images of stars and planets onto the ceiling, providing an immersive astronomy experience at home."
+            },
+            {
+              "itemId": "item8",
+              "picture": "https://example.com/astronomy-toy2.jpg",
+              "name": "Constellation Puzzle",
+              "price": "$19.99",
+              "rating": 4.1,
+              "details": "The Constellation Puzzle features a map of the night sky, allowing kids to piece together constellations and learn about the stars."
+            }
+          ]
+        },
+        {
+          "subCategoryId": "subcat5",
+          "name": "Geography",
+          "toys": [
+            {
+              "itemId": "item9",
+              "picture": "https://example.com/geography-toy1.jpg",
+              "name": "Interactive Globe",
+              "price": "$49.99",
+              "rating": 4.6,
+              "details": "The Interactive Globe provides an interactive learning experience, allowing kids to explore countries, capitals, and geographical facts."
+            },
+            {
+              "itemId": "item10",
+              "picture": "https://example.com/geography-toy2.jpg",
+              "name": "World Map Puzzle",
+              "price": "$29.99",
+              "rating": 4.3,
+              "details": "The World Map Puzzle features a detailed map of the world, encouraging kids to learn about countries, continents, and geography."
+            }
+          ]
+        },
+        {
+          "subCategoryId": "subcat6",
+          "name": "Anatomy",
+          "toys": [
+            {
+              "itemId": "item11",
+              "picture": "https://example.com/anatomy-toy1.jpg",
+              "name": "Human Body Model",
+              "price": "$59.99",
+              "rating": 4.8,
+              "details": "The Human Body Model allows kids to explore the human anatomy, learn about organs and body systems, and understand how the body works."
+            },
+            {
+              "itemId": "item12",
+              "picture": "https://example.com/anatomy-toy2.jpg",
+              "name": "Skeleton Puzzle",
+              "price": "$24.99",
+              "rating": 4.5,
+              "details": "The Skeleton Puzzle features a 3D puzzle of a human skeleton, helping kids learn the names and locations of bones in a fun and engaging way."
+            }
+          ]
+        }
+      ],
+      "picture": "https://example.com/toy7.jpg",
+      "name": "Solar System Model",
+      "price": "$39.99",
+      "rating": 4.9,
+      "sellerName": "Educational Toys Co.",
+      "sellerEmail": "info@edutoysco.com",
+      "availableQuantity": 5,
+      "toyDetails": "The solar system model kit comes with a set of 9 planets, including a light-up sun. It's a great educational tool to learn about our solar system."
+    }
+  ]
