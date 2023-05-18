@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../assets/logo.svg'
 import { Link } from 'react-router-dom';
-import { FaUser, FaBabyCarriage } from 'react-icons/fa';
+import {  FaBabyCarriage } from 'react-icons/fa';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const NavBar = () => {
+    const { user, logOut } = useContext(AuthContext);
 
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
     return (
         <div className="navbar bg-base-100 py-4">
             <div className="navbar-start">
@@ -29,9 +36,12 @@ const NavBar = () => {
                 <button className="btn btn-ghost btn-circle">
                     <FaBabyCarriage />
                 </button>
-                <button className="btn btn-ghost btn-circle">
-                    <FaUser />
-                </button>
+                {
+                    user ? <>
+                        <img src={user.photoURL} alt="" className='w-10 h-10 rounded-full mx-2' />
+                        <button onClick={handleLogOut} className="btn btn-xs">Logout</button>
+                    </> : <button className='btn btn-outline btn-primary'><Link to="/login">Login</Link></button>
+                }
             </div>
         </div>
     );

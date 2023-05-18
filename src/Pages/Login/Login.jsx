@@ -4,7 +4,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const Login = () => {
-    const {signIn}=useContext(AuthContext);
+    const {user, signIn}=useContext(AuthContext);
 
     const handleLogin=event=>{
         event.preventDefault();
