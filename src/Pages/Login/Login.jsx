@@ -30,6 +30,9 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
+                            <div className="form-control mt-6">
+                                <button className="btn btn-outline">Google Sign-In</button>
+                            </div>
                         </form>
                     </div>
                 </div>
