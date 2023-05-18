@@ -2,9 +2,21 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { FcGoogle } from "react-icons/fc";
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 const Login = () => {
-    const {user, signIn}=useContext(AuthContext);
+    const {user, signIn, auth}=useContext(AuthContext);
+    const provider= new GoogleAuthProvider();
+
+    const handleGoogleSignIn=()=>{
+      signInWithPopup(auth, provider)
+      .then(result=>{
+        const loggedUser=result.user;
+        console.log(loggedUser);
+      })
+      .catch(error=>console.log(error))
+    }
 
     const handleLogin=event=>{
         event.preventDefault();
@@ -58,7 +70,7 @@ const Login = () => {
                                 <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-outline">Google Sign-In</button>
+                                <button onClick={handleGoogleSignIn} className="btn btn-outline"><FcGoogle className='text-2xl'/> Google Sign-In</button>
                             </div>
                         </form>
                     </div>

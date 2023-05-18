@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import logo from '../../assets/logo.svg'
 import { Link } from 'react-router-dom';
-import {  FaBabyCarriage } from 'react-icons/fa';
+import { FaUser, FaBabyCarriage } from 'react-icons/fa';
+import { HiShoppingBag } from "react-icons/hi";
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const NavBar = () => {
@@ -31,16 +32,16 @@ const NavBar = () => {
             </div>
             <div className="navbar-end">
                 <button className="btn btn-ghost btn-circle">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-2xl" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                 </button>
                 <button className="btn btn-ghost btn-circle">
-                    <FaBabyCarriage />
+                    <HiShoppingBag className='text-2xl' />
                 </button>
                 {
                     user ? <>
                         <img src={user.photoURL} alt="" className='w-10 h-10 rounded-full mx-2' />
-                        <button onClick={handleLogOut} className="btn btn-xs">Logout</button>
-                    </> : <button className='btn btn-outline btn-primary'><Link to="/login">Login</Link></button>
+                        <button onClick={handleLogOut} className="btn btn-outline btn-primary">Logout</button>
+                    </> : <button className='btn btn-outline btn-primary btn-circle'><Link to="/login" ><FaUser className='text-2xl'/></Link></button>
                 }
             </div>
         </div>
