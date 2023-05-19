@@ -1,12 +1,15 @@
 import React from 'react';
-import { useRouteError } from 'react-router-dom';
+import { Link, useRouteError } from 'react-router-dom';
 
 const ErrorPage = () => {
-    const {error, status}=useRouteError();
+    const { error, status } = useRouteError();
     return (
-        <div>
-        <h2 className='text-7xl font-extrabold text-center'>4 <span></span>  4</h2>
-        
+        <div className='text-center'>
+            <div>
+                <h2 className='text-8xl font-extrabold text-center mt-40 text-primary'>{status}</h2>
+                <p className='text-2xl font-bold text-center text-primary'>{error.message}</p>
+            </div>
+                <Link to="/"><button className='btn btn-primary mt-4'>Back To Homepage</button></Link>
         </div>
     );
 };

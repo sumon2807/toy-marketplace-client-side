@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const ToyCards = ({ toy }) => {
-    const {toyName,price,rating,photo}=toy;
+const ToyCard = ({ toy }) => {
+    const { toyName, photo, price, rating } = toy;
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src={photo} alt="Toy" /></figure>
+            <figure><img src={photo} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
                     {toyName}
@@ -13,11 +14,11 @@ const ToyCards = ({ toy }) => {
                 <p><span>Price:</span>{price}</p>
                 <p><span>Rating:</span>{rating}</p>
                 <div className="card-actions justify-end">
-                    <div className="badge badge-outline">View Details</div>
+                    <Link><button className="badge badge-outline">View Details</button></Link>
                 </div>
             </div>
         </div>
     );
 };
 
-export default ToyCards;
+export default ToyCard;
