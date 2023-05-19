@@ -22,7 +22,6 @@ const NavBar = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to="/" className='font-semibold'>Home</Link></li>
-                        <li><Link to="/alltoys" className='font-semibold'>All Toys</Link></li>
                         <li><Link to="/mytoys" className='font-semibold'>My Toys</Link></li>
                         <li><Link to="/addtoys" className='font-semibold'>Add A Toy</Link></li>
                         <li><Link to="/blog" className='font-semibold'>Blogs</Link></li>

@@ -4,11 +4,14 @@ import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import AddToys from "../Pages/AddToys/AddToys";
+import Blogs from "../Pages/Blogs/Blogs";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path: '/',
@@ -26,6 +29,10 @@ const router = createBrowserRouter([
         {
           path: 'addtoys',
           element: <AddToys></AddToys>
+        },
+        {
+          path: 'blog',
+          element: <Blogs></Blogs>
         }
       ]
     },
