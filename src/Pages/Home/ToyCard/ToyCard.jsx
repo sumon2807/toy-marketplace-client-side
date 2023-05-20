@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ToyCard = ({ product }) => {
-    const { _id,toyName, photo, price, rating } = product;
-
+    const { _id,toyName, image_url, price, rating } = product;
+    console.log(product);
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src={photo} alt="Shoes" /></figure>
+            <figure><img src={image_url} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
                     {toyName}
@@ -15,7 +15,7 @@ const ToyCard = ({ product }) => {
                 <p><span>Price:</span>{price}</p>
                 <p><span>Rating:</span>{rating}</p>
                 <div className="card-actions justify-end">
-                    <Link to={`/viewDetails/${_id}`}><button onClick={()=>handleViewDetails(_id)} className="badge badge-outline">View Details</button></Link>
+                    <Link to={`/viewDetails/${_id}`}><button className="badge badge-outline">View Details</button></Link>
                 </div>
             </div>
         </div>
