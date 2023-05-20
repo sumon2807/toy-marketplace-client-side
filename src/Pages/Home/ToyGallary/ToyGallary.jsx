@@ -4,8 +4,8 @@ import { useLoaderData } from 'react-router-dom';
 import ToyCard from '../ToyCard/ToyCard';
 
 const ToyGallary = () => {
-    const toys = useLoaderData();
-    console.log(toys);
+    const products = useLoaderData();
+    console.log(products);
     return (
         <div className='lg:my-12'>
             <h2 className='text-7xl font-extrabold text-center'>Toys Gallary</h2>
@@ -23,9 +23,9 @@ const ToyGallary = () => {
                     <TabPanel>
                         <div className='lg:grid lg:grid-cols-3 gap-4 lg:mt-8'>
                             {
-                                toys.map(toy=> <ToyCard
-                                key={toy._id}
-                                toy={toy}
+                                products.map(product=> <ToyCard
+                                key={product._id}
+                                product={product}
                                 ></ToyCard>)
                             }
                         </div>
