@@ -10,7 +10,12 @@ const Bookings = () => {
     const url = `https://b7a11-toy-marketplace-server-side-sigma.vercel.app/checkouts?email=${user?.email}`;
 
     useEffect(() => {
-        fetch(url)
+        fetch(url, {
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('toy-access-token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 setBookings(data)
