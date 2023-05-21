@@ -4,7 +4,6 @@ import MyCollections from './MyCollections';
 
 const MyToys = () => {
     const myToys = useLoaderData();
-    console.log(myToys);
     return (
         <div className='lg:my-12'>
             <h2 className='text-7xl font-extrabold text-center'>My Toys Collection</h2>

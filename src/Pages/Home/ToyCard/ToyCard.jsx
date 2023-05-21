@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const ToyCard = ({ product }) => {
     const { _id,toyName, image_url, price, rating } = product;
-    console.log(product);
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
             <figure><img src={image_url} alt="Shoes" /></figure>

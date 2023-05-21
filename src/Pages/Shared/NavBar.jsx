@@ -22,14 +22,17 @@ const NavBar = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to="/" className='font-semibold'>Home</Link></li>
+                        <li><Link to="/mytoys" className='font-semibold'>My Toys</Link></li>
+                        <li><Link to="/addtoys" className='font-semibold'>Add A Toy</Link></li>
+                        <li><Link to="/blog" className='font-semibold'>Blogs</Link></li>
                         {
                             user?.email ? <>
-                                <li><Link to="/mytoys" className='font-semibold'>My Toys</Link></li>
+                                <li><Link to="/bookings" className='font-semibold'>My Orders</Link></li>
                             </> : <>
-                                <li><Link to="/addtoys" className='font-semibold'>Add A Toy</Link></li>
+                                <li><Link to="/login" className='font-semibold'>Login</Link></li>
                             </>
                         }
-                        <li><Link to="/blog" className='font-semibold'>Blogs</Link></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -45,9 +48,8 @@ const NavBar = () => {
                 </button>
                 {
                     user?.email ? <>
-                        <li><Link to="/bookings" className='font-semibold'>My Orders</Link></li>
                         <img src={user.photoURL} alt="" className='w-10 h-10 rounded-full mx-2' />
-                        <button onClick={handleLogOut} className="btn btn-outline btn-primary">Logout</button>
+                        <button onClick={handleLogOut} className="btn btn-outline btn-primary"><Link to="/">Logout</Link></button>
                     </> : <button className='btn btn-outline btn-primary btn-circle'><Link to="/login" ><FaUser className='text-2xl' /></Link></button>
                 }
             </div>

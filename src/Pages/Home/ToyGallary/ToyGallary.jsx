@@ -5,7 +5,6 @@ import ToyCard from '../ToyCard/ToyCard';
 
 const ToyGallary = () => {
     const products = useLoaderData();
-    console.log(products);
     return (
         <div className='lg:my-12'>
             <h2 className='text-7xl font-extrabold text-center'>Toys Gallary</h2>

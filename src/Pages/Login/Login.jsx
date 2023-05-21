@@ -1,13 +1,17 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { FcGoogle } from "react-icons/fc";
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 const Login = () => {
-    const {user, signIn, auth}=useContext(AuthContext);
+    const {user, signIn, auth, loading}=useContext(AuthContext);
     const provider= new GoogleAuthProvider();
+    const navigate=useNavigate();
+    const location=useLocation();
+    console.log(loading);
+    const from=location.state?.from?.pathname || '/';
 
     const handleGoogleSignIn=()=>{
       signInWithPopup(auth, provider)
@@ -31,6 +35,9 @@ const Login = () => {
         .then(result=>{
             const user=result.user;
             console.log(user);
+            navigate(from, {
+                replace:true
+            })
             Swal.fire({
                 title: 'Success!',
                 text: 'Successfully Login',

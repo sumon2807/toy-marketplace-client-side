@@ -11,6 +11,7 @@ import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import CheckOut from "../Pages/CheckOut/CheckOut";
 import Bookings from "../Pages/Bookings/Bookings";
 import PrivateRouts from "./PrivateRouts";
+import HotDeal from "../Pages/Home/HotDeal/HotDeal";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>,
-            loader: ()=>fetch('http://localhost:5000/products')
+            loader: ()=>fetch('https://b7a11-toy-marketplace-server-side-sigma.vercel.app/products')
         },
         {
             path: 'login',
@@ -33,12 +34,16 @@ const router = createBrowserRouter([
         },
         {
           path: 'addtoys',
-          element: <AddToys></AddToys>
+          element: <PrivateRouts><AddToys></AddToys></PrivateRouts>
         },
         {
           path: 'mytoys',
-          element: <MyToys></MyToys>,
-          loader: ()=>fetch('http://localhost:5000/toys')
+          element: <PrivateRouts><MyToys></MyToys></PrivateRouts>,
+          loader: ()=>fetch('https://b7a11-toy-marketplace-server-side-sigma.vercel.app/toys')
+        },
+        {
+          path: 'hotdeal',
+          element: <HotDeal></HotDeal>
         },
         {
           path: 'blog',
@@ -47,12 +52,12 @@ const router = createBrowserRouter([
         {
           path: '/viewDetails/:id',
           element: <ProductDetails></ProductDetails>,
-          loader: ({params})=>fetch(`http://localhost:5000/products/${params.id}`)
+          loader: ({params})=>fetch(`https://b7a11-toy-marketplace-server-side-sigma.vercel.app/products/${params.id}`)
         },
         {
           path: 'checkout/:id',
           element: <CheckOut></CheckOut>,
-          loader: ({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+          loader: ({params})=>fetch(`https://b7a11-toy-marketplace-server-side-sigma.vercel.app/toys/${params.id}`)
         },
         {
           path: 'bookings',

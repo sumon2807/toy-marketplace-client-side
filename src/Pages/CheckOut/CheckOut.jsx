@@ -28,7 +28,7 @@ const CheckOut = () => {
         }
         console.log(order);
 
-        fetch('http://localhost:5000/checkouts', {
+        fetch('https://b7a11-toy-marketplace-server-side-sigma.vercel.app/checkouts', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
@@ -83,7 +83,7 @@ const CheckOut = () => {
                         </div>
                     </div>
                     <div className="form-control mt-6">
-                        <input className="btn btn-outline" type="submit" value="Order Confirm" />
+                       <input className="btn btn-outline" type="submit" value="Order Confirm" to="/bookings" />
                     </div>
                 </form>
             </div>
