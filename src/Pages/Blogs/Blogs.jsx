@@ -5,7 +5,7 @@ const Blogs = () => {
     return (
         <div>
             <div className='relative'>
-                <img src="../../../public/assets/images/blog/blog.jpg" alt="" />
+                <img src="https://i.ibb.co/F3TY0Zf/blog.jpg" alt="" />
                 <div className='absolute left-1/3 top-2/4 '>
                     <h2 className='text-7xl font-extrabold text-white'>Our Blogs</h2>
                 </div>
