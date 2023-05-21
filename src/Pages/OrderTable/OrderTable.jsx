@@ -23,7 +23,8 @@ const OrderTable = ({ order, handleDelete, handleUpdate }) => {
             </th>
             <th>
                 {status === 'updated' ? <span className='font-bold text-green-600'>Updated</span> :
-                    <button onClick={()=>handleUpdate(_id)} className="btn btn-ghost btn-xs">Update</button>}
+                    <button onClick={()=>handleUpdate(_id)} className="btn btn-ghost btn-xs">Update</button>
+                    }
             </th>
             <th>
                 <button onClick={()=>handleDelete(_id)} className="btn btn-square btn-outline btn-sm">

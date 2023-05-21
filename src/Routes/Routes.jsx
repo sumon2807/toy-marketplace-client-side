@@ -12,6 +12,7 @@ import CheckOut from "../Pages/CheckOut/CheckOut";
 import Bookings from "../Pages/Bookings/Bookings";
 import PrivateRouts from "./PrivateRouts";
 import HotDeal from "../Pages/Home/HotDeal/HotDeal";
+import UpdateToy from "../Pages/UpdateToy/UpdateToy";
 
 const router = createBrowserRouter([
     {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
         {
           path: 'bookings',
           element: <PrivateRouts><Bookings></Bookings></PrivateRouts>
+        },
+        {
+          path: 'updateToy/:id',
+          element: <UpdateToy></UpdateToy>
         }
       ]
     },
