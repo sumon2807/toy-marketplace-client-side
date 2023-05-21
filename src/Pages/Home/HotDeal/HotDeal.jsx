@@ -18,9 +18,7 @@ const HotDeal = () => {
                 hotProdects.map(product=> <HotProduct
                 key={product._id}
                 product={product}
-                >
-
-                </HotProduct>)
+                ></HotProduct>)
             }
         </div>
     );
