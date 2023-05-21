@@ -34,9 +34,26 @@ const Login = () => {
         signIn(email, password)
         .then(result=>{
             const user=result.user;
-            console.log(user);
-            navigate(from, {
-                replace:true
+            const loggedUser={
+                email: user.email
+            }
+            console.log(loggedUser);
+           
+            fetch('http://localhost:5000/jwt', {
+                method: 'POST',
+                headers: {
+                    'content-type' : 'application/json'
+                },
+                body: JSON.stringify(loggedUser)
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log('jwt responce', data);
+                // warning access token
+                localStorage.setItem('toy-access-token', data.token);
+                navigate(from, {
+                    replace:true
+                })
             })
             Swal.fire({
                 title: 'Success!',
