@@ -12,10 +12,10 @@ const ToyGallary = () => {
                 <Tabs>
                     <TabList>
                         <div className="flex justify-center gap-4">
-                            <Tab className="text-2xl font-bold border-2 rounded-lg px-4 py-2">All Toys</Tab>
-                            <Tab className="text-2xl font-bold border-2 rounded-lg px-4 py-2">Education Toy</Tab>
-                            <Tab className="text-2xl font-bold border-2 rounded-lg px-4 py-2">Puzzle</Tab>
-                            <Tab className="text-2xl font-bold border-2 rounded-lg px-4 py-2">Resin Crafts</Tab>
+                            <Tab className="lg:text-2xl font-bold border-2 rounded-lg px-4 py-2">All Toys</Tab>
+                            <Tab className="lg:text-2xl font-bold border-2 rounded-lg px-4 py-2">Education Toy</Tab>
+                            <Tab className="lg:text-2xl font-bold border-2 rounded-lg px-4 py-2">Puzzle</Tab>
+                            <Tab className="lg:text-2xl font-bold border-2 rounded-lg px-4 py-2">Resin Crafts</Tab>
                         </div>
                     </TabList>
 

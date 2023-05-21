@@ -13,7 +13,7 @@ const HotDeal = () => {
 
     },[])
     return (
-        <div className='lg:flex justify-around gap-4 my-8'>
+        <div className='lg:flex justify-around gap-4 lg:my-8'>
             {
                 hotProdects.map(product=> <HotProduct
                 key={product._id}
