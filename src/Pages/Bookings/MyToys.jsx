@@ -3,30 +3,42 @@ import { AuthContext } from '../../Provider/AuthProvider';
 import OrderTable from '../OrderTable/OrderTable';
 import Swal from 'sweetalert2';
 
-const Bookings = () => {
+const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [bookings, setBookings] = useState([]);
 
-    const url = `https://b7a11-toy-marketplace-server-side-sigma.vercel.app/checkouts?email=${user?.email}`;
-
     useEffect(() => {
-        fetch(url, {
-            method: 'GET',
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('toy-access-token')}`
-            }
-        })
+        fetch('http://localhost:5000/toys')
             .then(res => res.json())
             .then(data => {
-                setBookings(data)
+                setBookings(data);
             })
-            .catch(error => console.log(error))
-    }, []);
+
+    }, [])
+
+
+
+
+    // const url = `https://b7a11-toy-marketplace-server-side-sigma.vercel.app/checkouts?email=${user?.email}`;
+
+    // useEffect(() => {
+    //     fetch(url, {
+    //         method: 'GET',
+    //         headers: {
+    //             authorization: `Bearer ${localStorage.getItem('toy-access-token')}`
+    //         }
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setBookings(data)
+    //         })
+    //         .catch(error => console.log(error))
+    // }, []);
 
     const handleDelete=id=>{
         const proceed=confirm('Are You Sure Want To Delete?')
         if(proceed){
-            fetch(`https://b7a11-toy-marketplace-server-side-sigma.vercel.app/checkouts/${id}`, {
+            fetch(`http://localhost:5000/toys/${id}`, {
                 method: 'DELETE'
             })
             .then(res=>res.json())
@@ -43,12 +55,12 @@ const Bookings = () => {
                     setBookings(remaining)
                 }
             })
-           
+
         }
     }
 
     const handleUpdate=id=>{
-        fetch(`https://b7a11-toy-marketplace-server-side-sigma.vercel.app/checkouts/${id}`, {
+        fetch(`http://localhost:5000/toys/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type' : 'application/json'
@@ -66,17 +78,17 @@ const Bookings = () => {
                     confirmButtonText: 'Cool'
                   })
                 // update state
-                const remaining=bookings.filter(booking=> booking._id !== id);
-                const updated=bookings.find(booking=> booking._id === id);
-                updated.status = 'updated'
-                const newUpdated= [updated, ...remaining];
-                setBookings(newUpdated)
+                // const remaining=bookings.filter(booking=> booking._id !== id);
+                // const updated=bookings.find(booking=> booking._id === id);
+                // updated.status = 'updated'
+                // const newUpdated= [updated, ...remaining];
+                // setBookings(newUpdated)
             }
         })
     }
     return (
         <div>
-            <h2 className='text-3xl font-bold '>Your Order List</h2>
+            <h2 className='text-3xl font-bold '>My Toys Collection</h2>
             <div className="overflow-x-auto w-full my-8">
                 <table className="table w-full">
                     {/* head */}
@@ -91,15 +103,14 @@ const Bookings = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
-                        {
-                            bookings.map(order=> <OrderTable
-                            key={order._id}
-                            order={order}
-                            handleDelete={handleDelete}
-                            handleUpdate={handleUpdate}
-                            ></OrderTable>)
-                        }
+                            {
+                                bookings.map(order => <OrderTable
+                                    key={order._id}
+                                    order={order}
+                                    handleUpdate={handleUpdate}
+                                    handleDelete={handleDelete}
+                                ></OrderTable>)
+                            }
                     </tbody>
 
                 </table>
@@ -108,4 +119,4 @@ const Bookings = () => {
     );
 };
 
-export default Bookings;
+export default MyToys;

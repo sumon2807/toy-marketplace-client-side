@@ -6,12 +6,12 @@ import Register from "../Pages/Register/Register";
 import AddToys from "../Pages/AddToys/AddToys";
 import Blogs from "../Pages/Blogs/Blogs";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
-import MyToys from "../Pages/MyToys/MyToys";
-import ProductDetails from "../Pages/ProductDetails/ProductDetails";
-import CheckOut from "../Pages/CheckOut/CheckOut";
-import Bookings from "../Pages/Bookings/Bookings";
 import PrivateRouts from "./PrivateRouts";
 import HotDeal from "../Pages/Home/HotDeal/HotDeal";
+import Update from "../Pages/CheckOut/Update";
+import ProductDetails from "../Pages/ProductDetails/ProductDetails";
+import MyToys from "../Pages/Bookings/MyToys";
+import UpdateToys from "../Pages/UpdateToys/UpdateToys";
 
 const router = createBrowserRouter([
     {
@@ -38,8 +38,12 @@ const router = createBrowserRouter([
         },
         {
           path: 'mytoys',
-          element: <PrivateRouts><MyToys></MyToys></PrivateRouts>,
-          loader: ()=>fetch('https://b7a11-toy-marketplace-server-side-sigma.vercel.app/toys')
+          element: <PrivateRouts><MyToys></MyToys></PrivateRouts>
+        },
+        {
+          path: 'updateToys/:id',
+          element: <Update></Update>,
+          loader: ({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
         },
         {
           path: 'hotdeal',
@@ -53,16 +57,8 @@ const router = createBrowserRouter([
           path: '/viewDetails/:id',
           element: <ProductDetails></ProductDetails>,
           loader: ({params})=>fetch(`https://b7a11-toy-marketplace-server-side-sigma.vercel.app/products/${params.id}`)
-        },
-        {
-          path: 'checkout/:id',
-          element: <CheckOut></CheckOut>,
-          loader: ({params})=>fetch(`https://b7a11-toy-marketplace-server-side-sigma.vercel.app/toys/${params.id}`)
-        },
-        {
-          path: 'bookings',
-          element: <PrivateRouts><Bookings></Bookings></PrivateRouts>
         }
+        
       ]
     },
   ]);

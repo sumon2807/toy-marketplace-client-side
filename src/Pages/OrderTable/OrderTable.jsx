@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const OrderTable = ({ order, handleDelete, handleUpdate }) => {
     const {_id, detail, photo, price, toyName, quantity, status } = order;
@@ -23,7 +24,7 @@ const OrderTable = ({ order, handleDelete, handleUpdate }) => {
             </th>
             <th>
                 {status === 'updated' ? <span className='font-bold text-green-600'>Updated</span> :
-                    <button onClick={()=>handleUpdate(_id)} className="btn btn-ghost btn-xs">Update</button>
+                    <Link to={`/updateToys/${_id}`}><button onClick={()=>handleUpdate(_id)} className="btn btn-ghost btn-xs">Update</button></Link>
                     }
             </th>
             <th>
