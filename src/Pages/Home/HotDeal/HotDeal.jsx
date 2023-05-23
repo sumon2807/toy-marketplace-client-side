@@ -5,7 +5,7 @@ const HotDeal = () => {
     const [hotProdects, setHotProducts]=useState([]);
 
     useEffect(()=>{
-        fetch('https://b7a11-toy-marketplace-server-side-sigma.vercel.app/hotdeals')
+        fetch('https://toy-marketplace-30cd1.web.app///hotdeals')
         .then(res=>res.json())
         .then(data=>{
             setHotProducts(data);

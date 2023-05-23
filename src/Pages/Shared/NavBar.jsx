@@ -27,14 +27,6 @@ const NavBar = () => {
                         <li><Link to="/mytoys" className='font-semibold'>My Toys</Link></li>
                         <li><Link to="/addtoys" className='font-semibold'>Add A Toy</Link></li>
                         <li><Link to="/blog" className='font-semibold'>Blogs</Link></li>
-                        {
-                            user?.email ? <>
-                                <li><Link to="/bookings" className='font-semibold'>My Orders</Link></li>
-                            </> : <>
-                                <li><Link to="/login" className='font-semibold'>Login</Link></li>
-                            </>
-                        }
-                        
                     </ul>
                 </div>
             </div>

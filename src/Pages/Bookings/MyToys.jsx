@@ -8,7 +8,7 @@ const MyToys = () => {
     const [bookings, setBookings] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys')
+        fetch('https://toy-marketplace-30cd1.web.app//toys')
             .then(res => res.json())
             .then(data => {
                 setBookings(data);
@@ -19,7 +19,7 @@ const MyToys = () => {
 
 
 
-    // const url = `https://b7a11-toy-marketplace-server-side-sigma.vercel.app/checkouts?email=${user?.email}`;
+    // const url = `https://toy-marketplace-30cd1.web.app///checkouts?email=${user?.email}`;
 
     // useEffect(() => {
     //     fetch(url, {
@@ -38,7 +38,7 @@ const MyToys = () => {
     const handleDelete=id=>{
         const proceed=confirm('Are You Sure Want To Delete?')
         if(proceed){
-            fetch(`http://localhost:5000/toys/${id}`, {
+            fetch(`https://toy-marketplace-30cd1.web.app//toys/${id}`, {
                 method: 'DELETE'
             })
             .then(res=>res.json())
@@ -60,7 +60,7 @@ const MyToys = () => {
     }
 
     const handleUpdate=id=>{
-        fetch(`http://localhost:5000/toys/${id}`, {
+        fetch(`https://toy-marketplace-30cd1.web.app//toys/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type' : 'application/json'

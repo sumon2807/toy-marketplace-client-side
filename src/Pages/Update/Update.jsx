@@ -26,7 +26,7 @@ const Update = () => {
         }
         console.log(order);
 
-        fetch(`http://localhost:5000/toys/${_id}`, {
+        fetch(`https://toy-marketplace-30cd1.web.app//toys/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'

@@ -8,10 +8,9 @@ import Blogs from "../Pages/Blogs/Blogs";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PrivateRouts from "./PrivateRouts";
 import HotDeal from "../Pages/Home/HotDeal/HotDeal";
-import Update from "../Pages/CheckOut/Update";
+import Update from "../Pages/Update/Update";
 import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import MyToys from "../Pages/Bookings/MyToys";
-import UpdateToys from "../Pages/UpdateToys/UpdateToys";
 
 const router = createBrowserRouter([
     {
@@ -22,7 +21,7 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>,
-            loader: ()=>fetch('https://b7a11-toy-marketplace-server-side-sigma.vercel.app/products')
+            loader: ()=>fetch('https://toy-marketplace-30cd1.web.app//products')
         },
         {
             path: 'login',
@@ -43,7 +42,7 @@ const router = createBrowserRouter([
         {
           path: 'updateToys/:id',
           element: <Update></Update>,
-          loader: ({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+          loader: ({params})=>fetch(`https://toy-marketplace-30cd1.web.app//toys/${params.id}`)
         },
         {
           path: 'hotdeal',
@@ -56,7 +55,7 @@ const router = createBrowserRouter([
         {
           path: '/viewDetails/:id',
           element: <ProductDetails></ProductDetails>,
-          loader: ({params})=>fetch(`https://b7a11-toy-marketplace-server-side-sigma.vercel.app/products/${params.id}`)
+          loader: ({params})=>fetch(`https://toy-marketplace-30cd1.web.app//products/${params.id}`)
         }
         
       ]

@@ -39,7 +39,7 @@ const Login = () => {
             }
             console.log(loggedUser);
            
-            fetch('https://b7a11-toy-marketplace-server-side-sigma.vercel.app/jwt', {
+            fetch('https://toy-marketplace-30cd1.web.app///jwt', {
                 method: 'POST',
                 headers: {
                     'content-type' : 'application/json'

@@ -20,7 +20,7 @@ const AddToys = () => {
         console.log(newToy);
 
         // send data to the server
-        fetch('https://b7a11-toy-marketplace-server-side-sigma.vercel.app/toys', {
+        fetch('https://toy-marketplace-30cd1.web.app//toys', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
